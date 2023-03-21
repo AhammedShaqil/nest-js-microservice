@@ -1,5 +1,6 @@
 services:
   orders:
+    container_name: Orders_API
     build:
       context: .
       dockerfile: ./apps/orders/Dockerfile
@@ -17,6 +18,7 @@ services:
     ports:
       - '3000:3000'
   billing:
+    container_name: Billings_API
     build:
       context: .
       dockerfile: ./apps/billing/Dockerfile
@@ -31,6 +33,7 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
   auth:
+    container_name: Auth_API
     build:
       context: .
       dockerfile: ./apps/auth/Dockerfile
